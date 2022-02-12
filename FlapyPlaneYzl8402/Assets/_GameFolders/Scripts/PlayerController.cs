@@ -20,9 +20,19 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    [Range(1f,500f)]
+    [Header("Movements")]
+    [Range(7000f,20000f)]
     [Tooltip("Force power is used with rigidbody add force method")]
     [SerializeField] float _forcePower = 250f;
+
+    [Range(20f,50f)]
+    [SerializeField] float _angle = 30f;
+
+    [Range(1f,60f)]
+    [SerializeField] float _angleSpeed = 30f;
+
+    [Header("Child Objects")]
+    [SerializeField] Transform _bodyTranform;
 
     Rigidbody2D _rigidbody2D;
     bool _isJump;
@@ -38,6 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         //calisma zmaaini rigidbody2d'i bir kere cache'lemis olduk
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        //Debug.Log(transform.position);
     }
 
     //Update method her bir framede bir calisir ve biz input alicaksak update icinde alir
@@ -65,6 +76,9 @@ public class PlayerController : MonoBehaviour
             //rigidbody2D.velocity = new Vector2(0f, 0f); //fizik 
             //rigidbody2D.AddForce(new Vector2(0f, _forcePower)); //fizik
             _isJump = true;
+            //transform.eulerAngles = new Vector3(0f, 0f, 30f);
+            //transform.eulerAngles = Vector3.forward * _angle;
+            _bodyTranform.eulerAngles = Vector3.forward * _angle;
         }
 
         // Debug.Log(result);
@@ -75,9 +89,18 @@ public class PlayerController : MonoBehaviour
     {
         if (_isJump)
         {
-            _rigidbody2D.velocity = new Vector2(0f,0f);
-            _rigidbody2D.AddForce(new Vector2(0f,_forcePower));
+            //_rigidbody2D.velocity = new Vector2(0f,0f);
+            _rigidbody2D.velocity = Vector2.zero;
+            
+            // _rigidbody2D.AddForce(new Vector2(0f,_forcePower));
+            _rigidbody2D.AddForce(Vector2.up * _forcePower * Time.fixedDeltaTime);
             _isJump = false;
         }
+    }
+
+    void LateUpdate()
+    {
+        //_bodyTranform.eulerAngles = _bodyTranform.eulerAngles + Vector3.forward * -30f;
+        _bodyTranform.eulerAngles += Vector3.forward * (-_angleSpeed * Time.deltaTime);
     }
 }
