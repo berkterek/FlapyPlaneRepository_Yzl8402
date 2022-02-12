@@ -319,7 +319,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a86920dbcb09874097a78d65f3d671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _forcePower: 250
+  _forcePower: 11500
+  _angle: 40
+  _angleSpeed: 50
+  _bodyTranform: {fileID: 340374470}
 --- !u!4 &740393128
 Transform:
   m_ObjectHideFlags: 0
