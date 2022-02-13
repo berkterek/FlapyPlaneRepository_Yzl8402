@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -102,5 +101,14 @@ public class PlayerController : MonoBehaviour
     {
         //_bodyTranform.eulerAngles = _bodyTranform.eulerAngles + Vector3.forward * -30f;
         _bodyTranform.eulerAngles += Vector3.forward * (-_angleSpeed * Time.deltaTime);
+    }
+
+    //OnTriggerEnter2D burasi game over'i tetiklicek yapimiz ama game over'in kendisi degildir
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        //Debug.Log("Game Over");
+        //Time.timeScale 0 olursa zmaan durur oyun icinde 1 olursa zmaan normal akar 0.7 0.6 gibi azalmalar slow motion gibi etkiler yapar
+        //Time.timeScale = 0f;
+        GameManager.Instance.GameOver();
     }
 }
