@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
         {
             //Instance'a bu refeeransi at
             Instance = this;
+            transform.parent = null;
             //DontDestroyOnLoad method'u bizim gameobject'lerimizi yok etme dedigmiz bir method'dur
             DontDestroyOnLoad(this.gameObject);
             //ve bu gameobject nesnenisi yok etme hicbir zaman(biz kendimiz kod ile yok etmedigmiz surece)
