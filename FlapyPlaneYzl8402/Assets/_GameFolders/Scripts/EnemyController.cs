@@ -29,7 +29,10 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
 
-        Debug.Log(_counter);
+    public void Message()
+    {
+        Debug.Log("Enemy Spawn");
     }
 }
