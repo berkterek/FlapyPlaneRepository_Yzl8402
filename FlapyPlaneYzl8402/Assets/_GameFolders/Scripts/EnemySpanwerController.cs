@@ -2,20 +2,24 @@ using UnityEngine;
 
 public class EnemySpanwerController : MonoBehaviour
 {
+    [Header("Prefab Objects")]
     [SerializeField] EnemyController _enemyPrefab;
-    [SerializeField] float _timeCounterSpeed = 1f;
-    [SerializeField] float _maxSpawnTime = 5f;
-    [SerializeField] float _minSpawnTime = 1f;
     [SerializeField] float _yMaxBorder = 1.8f;
+    
+    [Header("Time Values")]
+    [Range(-0.1f, 10f)]
+    [SerializeField] float _timeCounterSpeed = 1f;
+    [Range(-0.1f, 10f)]
+    [SerializeField] float _maxSpawnTime = 5f;
+    [Range(-0.1f, 10f)]
+    [SerializeField] float _minSpawnTime = 1f;
 
     float _currentTimeCounter;
     float _maxRandomTime;
 
     void Awake()
     {
-        _currentTimeCounter = 0f;
-        _maxRandomTime = Random.Range(_minSpawnTime, _maxSpawnTime);
-        Debug.Log(_maxRandomTime);
+        CreateRandomMaxTime();
     }
 
     void Update()
@@ -26,10 +30,14 @@ public class EnemySpanwerController : MonoBehaviour
         if (_currentTimeCounter > _maxRandomTime)
         {
             SpawnProcess();
-            _currentTimeCounter = 0f;
-            _maxRandomTime = Random.Range(_minSpawnTime, _maxSpawnTime);
-            Debug.Log(_maxRandomTime);
+            CreateRandomMaxTime();
         } 
+    }
+
+    private void CreateRandomMaxTime()
+    {
+        _currentTimeCounter = 0f;
+        _maxRandomTime = Random.Range(_minSpawnTime, _maxSpawnTime);
     }
 
     //3 sayiniyede bir spawn etsin
