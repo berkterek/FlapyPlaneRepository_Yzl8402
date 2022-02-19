@@ -257,6 +257,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[GameManager]'
       objectReference: {fileID: 0}
+    - target: {fileID: 599361335913388685, guid: 6aa137d3dc9bdc14a90dbdeb94ccd7c3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aa137d3dc9bdc14a90dbdeb94ccd7c3, type: 3}
 --- !u!1001 &4703672352827153359
@@ -323,6 +327,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4750401833915660105, guid: 3af1626a5b5b54c418174c9d8c8cff98, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4750401834043048998, guid: 3af1626a5b5b54c418174c9d8c8cff98, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -367,6 +375,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4750401834043048999, guid: 3af1626a5b5b54c418174c9d8c8cff98, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4750401834043049000, guid: 3af1626a5b5b54c418174c9d8c8cff98, type: 3}
       propertyPath: m_Name
       value: Player
@@ -384,9 +396,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1856941570}
     m_Modifications:
+    - target: {fileID: 4249318464666243830, guid: 2e9cfd37e558f0244a2fafd0ee8cd7fa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5174668456915666033, guid: 2e9cfd37e558f0244a2fafd0ee8cd7fa, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5174668456915666033, guid: 2e9cfd37e558f0244a2fafd0ee8cd7fa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5174668456921234714, guid: 2e9cfd37e558f0244a2fafd0ee8cd7fa, type: 3}
       propertyPath: m_RootOrder
@@ -455,7 +475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5302653475942044618, guid: 340f8cd3ff3336f4a95ef9224b2b1001, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.31
+      value: 13.87
       objectReference: {fileID: 0}
     - target: {fileID: 5302653475942044618, guid: 340f8cd3ff3336f4a95ef9224b2b1001, type: 3}
       propertyPath: m_LocalPosition.y
