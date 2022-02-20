@@ -4,8 +4,23 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] float _currentTime = 0f;
+    [SerializeField] int _score = 0;
+    [SerializeField] int _bestScore = 0;
+
+    public float CurrentTime
+    {
+        get
+        {
+            _currentTime += Time.deltaTime;
+            return _currentTime;
+        }
+    }
+
     public static GameManager Instance { get; private set; }
-    public event Action OnGameOvered;
+
+    //bu event iki int method'u alan methodlar icine atanablir
+    public event Action<int, int> OnGameOvered;
 
     void Awake()
     {
@@ -38,10 +53,21 @@ public class GameManager : MonoBehaviour
         // {
         //     OnGameOvered.Invoke();
         // }
-        
+
+        _score = (int)_currentTime;
+
+        //eger score buyukse best score'dan 
+        if (_score > _bestScore)
+        {
+            //demekki yeni best score simdiki score olur
+            _bestScore = _score;
+        }
+
+        _currentTime = 0f;
+
         //kisa yazimi
         //eger null degilse bu OnGameOvered event'i tetikle
-        OnGameOvered?.Invoke();
+        OnGameOvered?.Invoke(_score, _bestScore);
         Time.timeScale = 0f;
     }
 

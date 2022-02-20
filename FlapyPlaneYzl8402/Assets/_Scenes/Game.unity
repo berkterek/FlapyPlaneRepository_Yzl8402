@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &71254852 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3376079738527570227, guid: dbdfed40635cb7747b048e0bd3079c8d, type: 3}
-  m_PrefabInstance: {fileID: 8406597120448679954}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04ffe728a46e5a4418977f5bbdddc9ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &519420032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4703672352739894095, guid: 5cc08a1a15f8e564a949bba17038e157, type: 3}
@@ -647,34 +636,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 71254849, guid: dbdfed40635cb7747b048e0bd3079c8d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 71254849, guid: dbdfed40635cb7747b048e0bd3079c8d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 71254849, guid: dbdfed40635cb7747b048e0bd3079c8d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 71254852}
-    - target: {fileID: 71254849, guid: dbdfed40635cb7747b048e0bd3079c8d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 71254849, guid: dbdfed40635cb7747b048e0bd3079c8d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnButtonClicked
-      objectReference: {fileID: 0}
-    - target: {fileID: 71254849, guid: dbdfed40635cb7747b048e0bd3079c8d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ReturnMenuButton, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 71254849, guid: dbdfed40635cb7747b048e0bd3079c8d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6058088105502772000, guid: dbdfed40635cb7747b048e0bd3079c8d, type: 3}
       propertyPath: m_Pivot.x
       value: 0

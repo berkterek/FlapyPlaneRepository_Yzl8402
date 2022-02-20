@@ -26,7 +26,7 @@ public class GameOverController : MonoBehaviour
         _canvasGroup.blocksRaycasts = false;
     }
     
-    void HandleOnGameOvered()
+    void HandleOnGameOvered(int score, int bestScore)
     {
         _canvasGroup.alpha = 1f;
         _canvasGroup.interactable = true;
