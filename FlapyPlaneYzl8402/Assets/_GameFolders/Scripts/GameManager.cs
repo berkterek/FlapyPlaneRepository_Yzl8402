@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] int _score = 0;
     [SerializeField] int _bestScore = 0;
 
+    const string BEST_SCORE = "best_score";
+
     public float CurrentTime
     {
         get
@@ -25,6 +27,24 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         SingletonThisObject();
+    }
+
+    void Start()
+    {
+        // //uzun yanimi eger bu key varsa bestscore verisini cek
+        //  if (PlayerPrefs.HasKey(BEST_SCORE))
+        //  {
+        //      _bestScore = PlayerPrefs.GetInt(BEST_SCORE);    
+        //  }
+        //  else
+        //  {
+        //       //yoksa best score'a 0 degerini ata 
+        //      _bestScore = 0;
+        //  }
+
+        //kisa yazimi
+        //BEST_SCORE varsa o datayi getir yoksa varsayilian olarak 0 degerini ata demis oluyoruz
+        _bestScore = PlayerPrefs.GetInt(BEST_SCORE, 0);
     }
 
     void SingletonThisObject()
@@ -61,6 +81,7 @@ public class GameManager : MonoBehaviour
         {
             //demekki yeni best score simdiki score olur
             _bestScore = _score;
+            PlayerPrefs.SetInt(BEST_SCORE, _bestScore);
         }
 
         _currentTime = 0f;
