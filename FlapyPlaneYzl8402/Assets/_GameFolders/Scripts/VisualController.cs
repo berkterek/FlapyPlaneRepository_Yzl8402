@@ -22,12 +22,13 @@ public class VisualController : MonoBehaviour
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-    void Start()
-    {
-        //true ise null
-        //false ise null degildir
-        Debug.Log(_spriteRenderer == null);
-    }
+    // void Start()
+    // {
+    //     //true ise null
+    //     //false ise null degildir
+    //     Debug.Log(_spriteRenderer == null);
+    //     
+    // }
 
     void Update()
     {
