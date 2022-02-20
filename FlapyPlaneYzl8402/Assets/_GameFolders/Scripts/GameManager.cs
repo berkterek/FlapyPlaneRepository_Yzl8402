@@ -103,6 +103,6 @@ public class GameManager : MonoBehaviour
     public void LoadMenu()
     {
         //TODO this method for load menu scene
-        Debug.Log("Return Menu On Triggered");
+        SceneManager.LoadScene("Menu");
     }
 }

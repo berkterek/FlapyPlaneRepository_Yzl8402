@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayAgainButton : MonoBehaviour
+public class PlayButton : MonoBehaviour
 {
     Button _button;
 

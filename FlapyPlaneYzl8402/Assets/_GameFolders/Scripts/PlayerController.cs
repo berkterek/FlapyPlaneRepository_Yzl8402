@@ -33,7 +33,12 @@ public class PlayerController : MonoBehaviour
     [Header("Child Objects")]
     [SerializeField] Transform _bodyTranform;
 
+    [Header("Audio Clips")] 
+    [SerializeField] AudioClip[] _clips;
+    [SerializeField] AudioClip _deadClip;
+
     Rigidbody2D _rigidbody2D;
+    AudioSource _audioSource;
     bool _isJump;
 
     //bu yontem ile biz kendi uzerimizdeki veya baska gameobject uzerindeki rigidbody component'ine ulasablirzi
@@ -47,6 +52,7 @@ public class PlayerController : MonoBehaviour
     {
         //calisma zmaaini rigidbody2d'i bir kere cache'lemis olduk
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _audioSource = GetComponent<AudioSource>();
         //Debug.Log(transform.position);
     }
 
@@ -90,10 +96,11 @@ public class PlayerController : MonoBehaviour
         {
             //_rigidbody2D.velocity = new Vector2(0f,0f);
             _rigidbody2D.velocity = Vector2.zero;
-            
+
             // _rigidbody2D.AddForce(new Vector2(0f,_forcePower));
             _rigidbody2D.AddForce(Vector2.up * _forcePower * Time.fixedDeltaTime);
             _isJump = false;
+            _audioSource.PlayOneShot(_clips[Random.Range(0,_clips.Length)]);
         }
     }
 
@@ -109,6 +116,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Game Over");
         //Time.timeScale 0 olursa zmaan durur oyun icinde 1 olursa zmaan normal akar 0.7 0.6 gibi azalmalar slow motion gibi etkiler yapar
         //Time.timeScale = 0f;
+        _audioSource.PlayOneShot(_deadClip);
         GameManager.Instance.GameOver();
     }
 }
