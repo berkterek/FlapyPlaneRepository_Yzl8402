@@ -102,8 +102,8 @@ public class GameManager : MonoBehaviour
 
     public void LoadMenu()
     {
-        //TODO this method for load menu scene
         SceneManager.LoadScene("Menu");
+        Time.timeScale = 1f;
     }
 
     public void Exit()
