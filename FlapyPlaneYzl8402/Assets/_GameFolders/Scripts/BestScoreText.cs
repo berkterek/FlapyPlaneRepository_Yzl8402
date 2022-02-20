@@ -1,10 +1,10 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BestScoreText : MonoBehaviour
 {
     Text _text;
+    //TMP_Text _text;
     
     void Awake()
     {

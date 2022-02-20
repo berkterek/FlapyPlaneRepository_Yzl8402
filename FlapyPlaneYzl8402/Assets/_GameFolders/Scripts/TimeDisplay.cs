@@ -10,7 +10,6 @@ public class TimeDisplay : MonoBehaviour
         _text = GetComponent<Text>();
     }
 
-    //bu islem update icinde olmali
     void Update()
     {
         _text.text = GameManager.Instance.CurrentTime.ToString("00");
