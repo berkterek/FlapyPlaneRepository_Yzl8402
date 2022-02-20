@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    public event Action OnGameOvered;
 
     void Awake()
     {
@@ -31,8 +33,15 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        //TODO game over ui popup show
-        Debug.Log("Game Over");
+        //uzun yazimi
+        // if (OnGameOvered != null)
+        // {
+        //     OnGameOvered.Invoke();
+        // }
+        
+        //kisa yazimi
+        //eger null degilse bu OnGameOvered event'i tetikle
+        OnGameOvered?.Invoke();
         Time.timeScale = 0f;
     }
 
@@ -42,5 +51,11 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Game");
+    }
+
+    public void LoadMenu()
+    {
+        //TODO this method for load menu scene
+        Debug.Log("Return Menu On Triggered");
     }
 }
